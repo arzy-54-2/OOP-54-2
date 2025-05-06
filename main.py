@@ -26,6 +26,7 @@ asuna = Hero(hp=1000, name="Asuna", lvl=98)
 # test = int()
 
 
+
 kirito.action()
 asuna.action()
 
