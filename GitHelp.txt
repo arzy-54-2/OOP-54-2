@@ -31,3 +31,4 @@ Update/register
 feat: added register in file apps/users/register.py  #123312
 fix: fixed register in file register.py  #123312
 update: updated register in file register.py  #123312
+
