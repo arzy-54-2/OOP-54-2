@@ -76,3 +76,4 @@ class KGSmsSend(SmsSend):
     def send_otp_cod(self):
         pass
 
+# исправил ошибку
