@@ -21,6 +21,13 @@ git branch  | на какой ветке мы находимся
 git branch branch_name | создание ветки
 git switch branch_name | переключение на ветку
 
+удаление папки
+git rm -r путь/к/папке|file_name
+git add .
+git commit -m "Удалил папку путь/к/папке с её содержимым"
+
+
+
 Production
 dev | stage
 
