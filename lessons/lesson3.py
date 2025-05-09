@@ -1,27 +1,30 @@
 # Инкапсуляция
 import random
 #
-# class BankAccount:
-#
-#     def __init__(self, user, balance, password):
-#         self.user = user # Открытый
-#         self._balance = balance # Защищенный атрибут
-#         self.__password = password # Приватный атрибут
-#
-#
-#     def get_password(self):
-#         return self.__password
-#
-#     def __generate_pass(self):
-#         return random.randint(1, 100)
-#
-#     def reset_pass(self):
-#         self.__password = self.__generate_pass()
-#
-#
-# john = BankAccount("John", 1000, "123321")
+class BankAccount:
 
-# print(dir(john))
+    count = 0
+
+    def __init__(self, user: str, balance, password):
+        self.user = user # Открытый
+        self._balance = balance # Защищенный атрибут
+        self.__password = password # Приватный атрибут
+        self.count += 1
+
+
+    def get_password(self):
+        return self.__password
+
+    def __generate_pass(self):
+        return random.randint(1, 100)
+
+    def reset_pass(self):
+        self.__password = self.__generate_pass()
+
+
+john = BankAccount(123, 123, 123)
+
+print(dir(john))
 
 
 from abc import ABC, abstractmethod

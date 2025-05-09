@@ -27,6 +27,13 @@ git add .
 git commit -m "Удалил папку путь/к/папке с её содержимым"
 
 
+стянуть данные из указанной ветки
+локально
+git merge branch_name
+git pull origin main
+
+git clone link | для клонирования репозитория | проекта
+
 
 Production
 dev | stage
