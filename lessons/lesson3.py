@@ -30,7 +30,7 @@ print(dir(john))
 from abc import ABC, abstractmethod
 
 
-
+test()
 # Абстрактный класс
 class Animal(ABC):
 
@@ -80,3 +80,62 @@ class KGSmsSend(SmsSend):
         pass
 
 # исправил ошибку
+
+
+
+
+
+
+
+
+
+# staticmethod (статический метод) — это метод, который не требует доступа к экземпляру или
+# классу. Он ведет себя как обычная функция, но внутри класса.
+
+
+class MathUtils:
+
+    @staticmethod
+    def add(a,b):
+        return a + b
+
+
+# print(MathUtils.add(33,77))
+
+# class Person:
+#     count = 12
+#
+#     def __init__(self, num):
+#         self.num = num
+#
+#     @classmethod
+#     def test(cls):
+#         return f"{cls.count}"
+
+
+# print(Person.test())
+
+
+
+
+class Person:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    @property
+    def get_name(self):
+        return self.name
+
+
+person = Person("add", 33)
+
+# print(person.get_name)
+
+data = {
+    "first": 123,
+    "second": 321
+}
+
+print(data.get("firsts", "my"))
