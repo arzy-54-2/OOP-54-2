@@ -1,47 +1,54 @@
-from abc import  ABC, abstractmethod
+from abc import ABC, abstractmethod
 
-class Hero(ABC):    
-    def __init__(self, name, health, strength, level):
+# Абстрактный класс Hero
+class Hero(ABC):
+    def __init__(self, name, level, health, strength):
         self.name = name
-        self.__health= health
-        self.strength = strength
         self.level = level
+        self.__health = health  # приватный атрибут (инкапсуляция)
+        self.strength = strength
 
     def greet(self):
-        print(f"Привет я, {self.name}! мой уровень {self.level} ")
+        print(f"Привет, я {self.name}, мой уровень {self.level}")
 
     def rest(self):
-        print(f"{self.name} отдыхает")
         self.__health += 1
+        print(f"{self.name} отдыхает. Здоровье увеличено на 1!")
 
     @abstractmethod
     def attack(self):
-        pass 
+        pass  # абстрактный метод, обязательно реализуется в дочерних классах
 
+# Дочерние классы с реализацией attack()
 class Warrior(Hero):
     def attack(self):
-        print(f"{self.name} атакует мечом")
+        print("Воин атакует мечом!")
 
 class Mage(Hero):
     def attack(self):
-        print(f"{self.name} атакует магией")
+        print("Маг использует магию!")
 
 class Assassin(Hero):
     def attack(self):
-        print(f"{self.name} атакует из под тишка")
+        print("Ассасин атакует из-под тишка!")
 
+# Создание объектов
+warrior1 = Warrior("Sauron", 10, 100, 50)
+mage1 = Mage("Gendalf", 9, 80, 40)
+assassin1 = Assassin("StormShadow", 8, 90, 45)
 
-warrior = Warrior("Геракл", 100, 20, 5)
-warrior.greet()
-warrior.rest()
-warrior.attack()
+# Вызов методов каждого героя
+print("----- Warrior -----")
+warrior1.greet()
+warrior1.attack()
+warrior1.rest()
 
-mage = Mage("Мерлин", 80, 30, 7)
-mage.greet()
-mage.rest()
-mage.attack()
+print("\n----- Mage -----")
+mage1.greet()
+mage1.attack()
+mage1.rest()
 
-assassin = Assassin("Шадоу", 70, 25, 6)
-assassin.greet()
-assassin.rest() 
-assassin.attack()
+print("\n----- Assassin -----")
+assassin1.greet()
+assassin1.attack()
+assassin1.rest()
